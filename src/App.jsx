@@ -1,9 +1,10 @@
 import "./App.css";
+import Router from "./Routers/Router";
 
 const App = () => {
   return (
     <>
-      App
+      <Router/>
     </>
   )
 }
