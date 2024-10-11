@@ -2,9 +2,9 @@ import "./Header.css"
 import { headerBooks } from "../../Data/Data"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Link } from "react-router-dom";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Link } from "react-router-dom";
 import { Navigation, Pagination} from 'swiper/modules';
 import { GoArrowRight } from "react-icons/go";
 import { GoArrowLeft } from "react-icons/go";

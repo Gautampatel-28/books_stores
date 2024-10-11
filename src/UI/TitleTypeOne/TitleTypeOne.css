@@ -1,0 +1,40 @@
+.titleTypeOne{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+
+.headingH {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.headingH .line {
+    background: var(--color-dark-Ex);
+    height: 1px;
+    flex: 1;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.victor{
+    width: 46px;
+    margin: 0 auto;
+}
+
+@media(max-width: 1024px){
+    .headingH{
+        gap: 20px;
+    }
+}
