@@ -9,6 +9,17 @@ import { useState } from "react";
 const Nav = () => {
   const [isNavLinkShowing, setIsNavLinkShowing] = useState(false);
 
+  if(innerWidth < 1024){
+      window.addEventListener('scroll', () => {
+        document.querySelector('.nav-links').classList.add("navLinksHide")
+        setIsNavLinkShowing(false)
+      })
+  }
+
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle("navShadow", window.scrollY > 0)
+  });
+  
   return (
     <>
       <nav>
@@ -17,14 +28,14 @@ const Nav = () => {
             <img src={Logo} alt="logo" />
           </Link>
 
-          {/* Use the state value here, not the setter */}
+          
           <ul className={`nav-links ${isNavLinkShowing ? 'navLinksShow' : 'navLinksHide'}`}>
             {navLinks.map(({ name, path }, index) => (
               <li key={index}>
                 <NavLink 
                   to={path} 
                   className={({ isActive }) => (isActive ? 'active' : '')}
-                  onClick={() => setIsNavLinkShowing(false)} // Close menu after clicking a link
+                  onClick={() => setIsNavLinkShowing(false)} 
                 >
                   {name}
                 </NavLink>
@@ -43,7 +54,7 @@ const Nav = () => {
               </Link>
             ))}
 
-            {/* Toggle button for showing and hiding the menu */}
+            
             <button className="menu-button" onClick={() => setIsNavLinkShowing(!isNavLinkShowing)}>
               {isNavLinkShowing ? <GrClose /> : <VscMenu />}
             </button>
@@ -55,4 +66,3 @@ const Nav = () => {
 };
 
 export default Nav;
-//30:07

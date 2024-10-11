@@ -9,6 +9,10 @@ nav{
     border: 1px solid var(--color-dark-Ex);
 }
 
+.navShadow{
+    box-shadow: 0 0 4rem rgba(0,0,0,0.2);
+}
+
 .nav-container{
     display: flex;
     align-items: center;
@@ -68,10 +72,16 @@ nav{
         top: 90px;
         right: 0;
         position: fixed;
+        perspective: 400px;
     }
+
     .nav-links li{
         height: 100%;
         width: 100%;
+        animation: navAni 600ms forwards ease;
+        opacity: 0;
+        transform: rotateY(-90deg);
+
     }
     .nav-links a{
         display: inline-block;
@@ -98,4 +108,36 @@ nav{
         display: none;
     }
 
+    @keyframes navAni{
+        to{
+            transform: rotateY(0);
+            opacity: 1;
+        }
+    }
+
+    .nav-links li:nth-child(2){
+        animation-delay: 200ms;
+    }
+    .nav-links li:nth-child(3){
+        animation-delay: 400ms;
+    }
+    .nav-links li:nth-child(4){
+        animation-delay: 600ms;
+    }
+    .nav-links li:nth-child(5){
+        animation-delay: 800ms;
+    }
+    .nav-links li:nth-child(6){
+        animation-delay: 1000ms;
+    }
+    .nav-links li:nth-child(7){
+        animation-delay: 1200ms;
+    }
+}
+
+
+@media(max-width: 600px){
+    .nav-links{
+        width: 18rem;
+    }
 }
