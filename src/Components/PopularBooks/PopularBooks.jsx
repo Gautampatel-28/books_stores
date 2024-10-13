@@ -42,7 +42,7 @@ const PopularBooks = () => {
             filterItems.map(({ name, price, image, writer }, index) => {
               return (
                 
-                <div className="gallery-items" key={index}>
+                <div className="galleryitems" key={index}>
                   <div className="popularbook-image">
                     <img src={image} alt={name} className="" />
                   </div>
