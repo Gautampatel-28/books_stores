@@ -1,0 +1,84 @@
+.popularbooks-container {
+    border-bottom: 1px solid var(--color-dark-Ex);
+    padding-bottom: 56px;
+}
+
+.filterbuttons {
+    margin-top: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 66px;
+}
+
+.filterbuttons button {
+    font-size: 16px;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 6px;
+    border-bottom: 3px solid transparent;
+}
+
+.filterbuttons button:hover {
+    color: var(--color-black);
+}
+
+.filterbuttons .active {
+    border-bottom: 1px solid var(--color-black);
+    color: var(--color-primary);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.galleryitems {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    animation: GAni 600ms ease forwards;
+}
+
+@keyframes GAni {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.popularbook-image {
+    background: var(--color-light);
+    padding: 10px; /* Adds padding inside the image container */
+    border-radius: 8px; /* Smoothens the edges */
+}
+
+.popularbooks-info > div {
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .popularbooks-info > div {
+        margin-bottom: 10px;
+    }
+    .filterbuttons {
+        gap: 20px; 
+}
